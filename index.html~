@@ -1,0 +1,23 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>hsbne</title>
+<script>
+   alert( document.getElementsByTagName("div");)
+</script>
+</head>
+
+<body>
+
+<div style="position:fixed; top:0px; left:0px; width:100%; height:70%; border:none; margin:0; padding:0;">
+<iframe style="width:100%; height:100%;" scrolling="no" src="tour.html" id="pano" name="pano" >
+</iframe>
+</div>
+
+<div  style="position:fixed; left:0px; bottom:0px;width:100%; height:30%; border:none; margin:0; padding:0;">
+<iframe style=" width:100%; height:100%; border:none; margin:0; padding:0;" src="" id="information" name="information" >
+</iframe>
+</div>
+</body>
+</html> 
