@@ -1,4 +1,4 @@
-<krpano version="1.18" title="Virtual Tour" onstart="startup();">
+<krpano version="1.18" title="Virtual Tour" onstart="startup();dosec();js(getTime());setTime();">
 
 	<include url="skin/vtourskin.xml" />
 
@@ -74,8 +74,8 @@
 		</image>
 
 		<!-- place your scene hotspots here -->
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-3.656" atv="9.652" linkedscene="gr-center" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="156.478" atv="19.911" linkedscene="center" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-7.433" atv="8.263" linkedscene="gr-center" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="165.905" atv="16.650" linkedscene="center" />
 
 	</scene>
 
@@ -95,9 +95,32 @@
 		</image>
 
 		<!-- place your scene hotspots here -->
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-8.182" atv="12.771" linkedscene="gr-bottom" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="168.617" atv="7.114" linkedscene="gr-top" />
-
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-10.410" atv="4.940" linkedscene="gr-bottom" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="167.743" atv="4.456" linkedscene="gr-top" />
+<hotspot name="screen"
+         url.flash="plugins/videoplayer.swf"
+         url.html5="plugins/videoplayer.js"
+         videourl="videos/screen.mp4|videos/screen.webm|videos/screen.flv"
+         posterurl="videos/screen.jpg"
+         ath="-90.869" atv="-10.960"
+         distorted="true"
+         scale="1.0" 
+         rx="0.0" 
+         ry="0.0" 
+         rz="0.0" 
+         pausedonstart=""
+         loop="false"
+         volume="1.0"
+         playbackrate="1.0"
+         directionalsound="true"
+         range="90.0"
+         rangefalloff="1.0"
+         outofrangevolume="0.0"
+         preferredformat=""
+         buffertime="0.1"
+         ignoremetadata="false"
+	         onclick="togglepause();"
+         />
 	</scene>
 
 
@@ -117,8 +140,39 @@
 		</image>
 
 		<!-- place your scene hotspots here -->
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="169.759" atv="17.945" linkedscene="gr-center" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="169.805" atv="6.100" linkedscene="gr-center" />
 
+
+    <hotspot name="clock" url="plugins/bg.png" keep="false" edge="center" ath="-3.808" atv="-30.758" distorted="true"
+    />
+
+    <hotspot name="hour" url="plugins/st.png" keep="false" edge="bottom" ath="-3.808" atv="-30.758" width="20" height="95" distorted="true" zorder="1" />
+
+    <hotspot name="min" url="plugins/st.png" keep="false" edge="bottom" ath="-3.808" atv="-30.758" width="10" height="130" distorted="true" zorder="2" />
+
+    <hotspot name="sec" url="plugins/st.png" keep="false" edge="bottom" ath="-3.808" atv="-30.758" width="5" height="130" distorted="true" zorder="3" />
 	</scene>
+
+    <action name="dosec" >
+        delayedcall(1,
+        	add(hotspot[sec].rotate,6);
+        	dosec();
+            ifnot(hotspot[sec].rotate LT 360,
+                set(hotspot[sec].rotate,0);
+                add(hotspot[min].rotate,6);
+                add(hotspot[hour].rotate,0.5);
+            );
+            ifnot(hotspot[min].rotate LT 360, set(hotspot[min].rotate,0); );
+            ifnot(hotspot[hour].rotate LT 720, set(hotspot[hour].rotate,0); );
+        );
+    </action>
+
+    <action name="setTime">
+        mul(hotspot[hour].rotate,%1,30);
+        mul(hotspot[min].rotate,%2,6);
+        mul(hotspot[sec].rotate,%3,6);
+        mul(hdelta,%2,0.5);
+        add(hotspot[hour].rotate,hdelta);
+    </action>
 
 </krpano>
