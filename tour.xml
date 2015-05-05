@@ -1,4 +1,4 @@
-<krpano version="1.18" title="Virtual Tour" onstart="startup();dosec();js(getTime());setTime();">
+<krpano version="1.18" title="Virtual Tour" onstart="startup();">
 
 	<include url="skin/vtourskin.xml" />
 
@@ -35,144 +35,160 @@
 		loadscene(get(startscene), null, MERGE);
 	</action>
 
-<events onnewscene="js( DisHtml(get(xml.scene)) );"/>
-
-
-	<scene name="center" title="hsbne" onstart="" thumburl="panos/hsbne-center_png.tiles/thumb.jpg" lat="" lng="" heading="">
+	
+	<scene name="gr_center" title="Green Room" onstart="" thumburl="panos/node01.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
-		<preview url="panos/hsbne-center_png.tiles/preview.jpg" />
+		<preview url="panos/node01.tiles/preview.jpg" />
 
 		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="688" tiledimageheight="688">
-				<cube url="panos/hsbne-center_png.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			<level tiledimagewidth="1304" tiledimageheight="1304">
+				<cube url="panos/node01.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="652" tiledimageheight="652">
+				<cube url="panos/node01.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 			<mobile>
-				<cube url="panos/hsbne-center_png.tiles/mobile_%s.jpg" />
+				<cube url="panos/node01.tiles/mobile_%s.jpg" />
 			</mobile>
 		</image>
 
 		<!-- place your scene hotspots here -->
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-11.147" atv="12.377" linkedscene="gr-top" />
 
 	</scene>
 
-	<scene name="gr-top" title="hsbne: green room: top" onstart="" thumburl="panos/hsbne-gr-top_png.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="gr_bottom" title="Green Room" onstart="" thumburl="panos/node02.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
-		<preview url="panos/hsbne-gr-top_png.tiles/preview.jpg" />
+		<preview url="panos/node02.tiles/preview.jpg" />
 
 		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="688" tiledimageheight="688">
-				<cube url="panos/hsbne-gr-top_png.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			<level tiledimagewidth="1304" tiledimageheight="1304">
+				<cube url="panos/node02.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="652" tiledimageheight="652">
+				<cube url="panos/node02.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 			<mobile>
-				<cube url="panos/hsbne-gr-top_png.tiles/mobile_%s.jpg" />
+				<cube url="panos/node02.tiles/mobile_%s.jpg" />
 			</mobile>
 		</image>
 
 		<!-- place your scene hotspots here -->
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-7.433" atv="8.263" linkedscene="gr-center" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="165.905" atv="16.650" linkedscene="center" />
 
 	</scene>
 
-	<scene name="gr-center" title="hsbne: green room: center" onstart="" thumburl="panos/hsbne-gr-center_png.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="gr_ham" title="Green Room: Ham Radio Station" onstart="" thumburl="panos/node03.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
-		<preview url="panos/hsbne-gr-center_png.tiles/preview.jpg" />
+		<preview url="panos/node03.tiles/preview.jpg" />
 
 		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="688" tiledimageheight="688">
-				<cube url="panos/hsbne-gr-center_png.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			<level tiledimagewidth="1304" tiledimageheight="1304">
+				<cube url="panos/node03.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="652" tiledimageheight="652">
+				<cube url="panos/node03.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 			<mobile>
-				<cube url="panos/hsbne-gr-center_png.tiles/mobile_%s.jpg" />
+				<cube url="panos/node03.tiles/mobile_%s.jpg" />
 			</mobile>
 		</image>
 
 		<!-- place your scene hotspots here -->
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-10.410" atv="4.940" linkedscene="gr-bottom" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="167.743" atv="4.456" linkedscene="gr-top" />
-<hotspot name="screen"
-         url.flash="plugins/videoplayer.swf"
-         url.html5="plugins/videoplayer.js"
-         videourl="videos/screen.mp4|videos/screen.webm|videos/screen.flv"
-         posterurl="videos/screen.jpg"
-         ath="-90.869" atv="-10.960"
-         distorted="true"
-         scale="1.0" 
-         rx="0.0" 
-         ry="0.0" 
-         rz="0.0" 
-         pausedonstart=""
-         loop="false"
-         volume="1.0"
-         playbackrate="1.0"
-         directionalsound="true"
-         range="90.0"
-         rangefalloff="1.0"
-         outofrangevolume="0.0"
-         preferredformat=""
-         buffertime="0.1"
-         ignoremetadata="false"
-	         onclick="togglepause();"
-         />
+
 	</scene>
 
-
-	<scene name="gr-bottom" title="hsbne: green room: bottom" onstart="" thumburl="panos/hsbne-gr-bottom_png.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="gr_electronics" title="Green Room: Electronic Station" onstart="" thumburl="panos/node04.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
-		<preview url="panos/hsbne-gr-bottom_png.tiles/preview.jpg" />
+		<preview url="panos/node04.tiles/preview.jpg" />
 
 		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="688" tiledimageheight="688">
-				<cube url="panos/hsbne-gr-bottom_png.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			<level tiledimagewidth="1304" tiledimageheight="1304">
+				<cube url="panos/node04.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="652" tiledimageheight="652">
+				<cube url="panos/node04.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
 			</level>
 			<mobile>
-				<cube url="panos/hsbne-gr-bottom_png.tiles/mobile_%s.jpg" />
+				<cube url="panos/node04.tiles/mobile_%s.jpg" />
 			</mobile>
 		</image>
 
 		<!-- place your scene hotspots here -->
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="169.805" atv="6.100" linkedscene="gr-center" />
 
-
-    <hotspot name="clock" url="plugins/bg.png" keep="false" edge="center" ath="-3.808" atv="-30.758" distorted="true"
-    />
-
-    <hotspot name="hour" url="plugins/st.png" keep="false" edge="bottom" ath="-3.808" atv="-30.758" width="20" height="95" distorted="true" zorder="1" />
-
-    <hotspot name="min" url="plugins/st.png" keep="false" edge="bottom" ath="-3.808" atv="-30.758" width="10" height="130" distorted="true" zorder="2" />
-
-    <hotspot name="sec" url="plugins/st.png" keep="false" edge="bottom" ath="-3.808" atv="-30.758" width="5" height="130" distorted="true" zorder="3" />
 	</scene>
 
-    <action name="dosec" >
-        delayedcall(1,
-        	add(hotspot[sec].rotate,6);
-        	dosec();
-            ifnot(hotspot[sec].rotate LT 360,
-                set(hotspot[sec].rotate,0);
-                add(hotspot[min].rotate,6);
-                add(hotspot[hour].rotate,0.5);
-            );
-            ifnot(hotspot[min].rotate LT 360, set(hotspot[min].rotate,0); );
-            ifnot(hotspot[hour].rotate LT 720, set(hotspot[hour].rotate,0); );
-        );
-    </action>
+	<scene name="gr_top" title="Green Room" onstart="" thumburl="panos/node05.tiles/thumb.jpg" lat="" lng="" heading="">
 
-    <action name="setTime">
-        mul(hotspot[hour].rotate,%1,30);
-        mul(hotspot[min].rotate,%2,6);
-        mul(hotspot[sec].rotate,%3,6);
-        mul(hdelta,%2,0.5);
-        add(hotspot[hour].rotate,hdelta);
-    </action>
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/node05.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="1304" tiledimageheight="1304">
+				<cube url="panos/node05.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="652" tiledimageheight="652">
+				<cube url="panos/node05.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+			<mobile>
+				<cube url="panos/node05.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+	<scene name="gr_kitchen" title="Green Room: kitchen" onstart="" thumburl="panos/node06.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/node06.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="1304" tiledimageheight="1304">
+				<cube url="panos/node06.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="652" tiledimageheight="652">
+				<cube url="panos/node06.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+			<mobile>
+				<cube url="panos/node06.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
+	<scene name="enterway" title="Enter way" onstart="" thumburl="panos/node07.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/node07.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="1304" tiledimageheight="1304">
+				<cube url="panos/node07.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="652" tiledimageheight="652">
+				<cube url="panos/node07.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+			<mobile>
+				<cube url="panos/node07.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
+
 
 </krpano>
