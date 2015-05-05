@@ -1,1 +1,1 @@
-.././krpanotools makepano -config=../templates/vtour-multires.config node01/crop/pano_1.tif node02/crop/pano_1.tif node03/crop/pano_1.tif node04/crop/pano_1.tif node05/crop/pano_1.tif node06/crop/pano_1.tif node07/crop/pano_1.tif .
+.././krpanotools makepano -config=../templates/vtour-multires.config node01.tif node02.tif node03.tif node04.tif node05.tif node06.tif node07.tif
