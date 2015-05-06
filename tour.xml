@@ -8,7 +8,7 @@
 	               maps_bing_api_key=""
 	               maps_zoombuttons="false"
 	               gyro="true"
-	               title="true"
+	               title=""
 	               thumbs="true"
 	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
 	               thumbs_opened="false"
@@ -35,6 +35,29 @@
 		loadscene(get(startscene), null, MERGE);
 	</action>
 
+<events onloadcomplete="js ( DisHtml(get(xml.scene)); ) ; " />
+
+	<scene name="entryway" title="Entryway" onstart="" thumburl="panos/node07.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/node07.tiles/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="1304" tiledimageheight="1304">
+				<cube url="panos/node07.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="652" tiledimageheight="652">
+				<cube url="panos/node07.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+			<mobile>
+				<cube url="panos/node07.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+
+	</scene>
 	
 	<scene name="gr_center" title="Green Room" onstart="" thumburl="panos/node01.tiles/thumb.jpg" lat="" lng="" heading="">
 
@@ -168,27 +191,6 @@
 
 	</scene>
 
-	<scene name="enterway" title="Enter way" onstart="" thumburl="panos/node07.tiles/thumb.jpg" lat="" lng="" heading="">
-
-		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/node07.tiles/preview.jpg" />
-
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1304" tiledimageheight="1304">
-				<cube url="panos/node07.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="652" tiledimageheight="652">
-				<cube url="panos/node07.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
-			<mobile>
-				<cube url="panos/node07.tiles/mobile_%s.jpg" />
-			</mobile>
-		</image>
-
-		<!-- place your scene hotspots here -->
-
-	</scene>
 
 
 </krpano>
