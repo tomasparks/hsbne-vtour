@@ -63,7 +63,7 @@
 		<!-- place your scene hotspots here -->
 	<!-- nadir logo (distored hotspot) -->
 	<hotspot name="nadirlogo"
-	         url="skin/krpano-roundlogo.png"
+	         url="skin/nadirlogo.png"
 	         ath="0"
 	         atv="90"
 	         distorted="true"
@@ -96,7 +96,7 @@
 		<!-- place your scene hotspots here -->
 	<!-- nadir logo (distored hotspot) -->
 	<hotspot name="nadirlogo"
-	         url="skin/krpano-roundlogo.png"
+	         url="skin/nadirlogo.png"
 	         ath="0"
 	         atv="90"
 	         distorted="true"
@@ -129,7 +129,7 @@
 		<!-- place your scene hotspots here -->
 	<!-- nadir logo (distored hotspot) -->
 	<hotspot name="nadirlogo"
-	         url="skin/krpano-roundlogo.png"
+	         url="skin/nadirlogo.png"
 	         ath="0"
 	         atv="90"
 	         distorted="true"
@@ -162,7 +162,7 @@
 		<!-- place your scene hotspots here -->
 	<!-- nadir logo (distored hotspot) -->
 	<hotspot name="nadirlogo"
-	         url="skin/krpano-roundlogo.png"
+	         url="skin/nadirlogo.png"
 	         ath="0"
 	         atv="90"
 	         distorted="true"
@@ -195,7 +195,7 @@
 		<!-- place your scene hotspots here -->
 	<!-- nadir logo (distored hotspot) -->
 	<hotspot name="nadirlogo"
-	         url="skin/krpano-roundlogo.png"
+	         url="skin/nadirlogo.png"
 	         ath="0"
 	         atv="90"
 	         distorted="true"
@@ -227,7 +227,7 @@
 		<!-- place your scene hotspots here -->
 	<!-- nadir logo (distored hotspot) -->
 	<hotspot name="nadirlogo"
-	         url="skin/krpano-roundlogo.png"
+	         url="skin/nadirlogo.png"
 	         ath="0"
 	         atv="90"
 	         distorted="true"
@@ -259,7 +259,7 @@
 		<!-- place your scene hotspots here -->
 	<!-- nadir logo (distored hotspot) -->
 	<hotspot name="nadirlogo"
-	         url="skin/krpano-roundlogo.png"
+	         url="skin/nadirlogo.png"
 	         ath="0"
 	         atv="90"
 	         distorted="true"
