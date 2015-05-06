@@ -3,10 +3,7 @@
 	<include url="skin/vtourskin.xml" />
 
 	<!-- set skin settings: bingmaps? gyro? thumbnails? tooltips? -->
-	<skin_settings maps="false"
-	               maps_type="bing"
-	               maps_bing_api_key=""
-	               maps_zoombuttons="false"
+	<skin_settings 
 	               gyro="true"
 	               title=""
 	               thumbs="true"
@@ -37,6 +34,14 @@
 
 <events onloadcomplete="js ( DisHtml(get(xml.scene)); ) ; " />
 
+	<!-- events - update logo rotation with pano rotation -->
+	<events name="nadirlogorotation"
+	        onviewchange="if(hotspot[nadirlogo].rotatewithview, set(hotspot[nadirlogo].rotate,get(view.hlookat)) );"
+	        />
+
+
+
+
 	<scene name="entryway" title="Entryway" onstart="" thumburl="panos/node07.tiles/thumb.jpg" lat="" lng="" heading="">
 
 		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
@@ -56,6 +61,17 @@
 		</image>
 
 		<!-- place your scene hotspots here -->
+	<!-- nadir logo (distored hotspot) -->
+	<hotspot name="nadirlogo"
+	         url="skin/nadirlogo.png"
+	         ath="0"
+	         atv="90"
+	         distorted="true"
+	         scale="1.0"
+	         rotate="0.0"
+	         rotatewithview="false"
+	         onclick="switch(rotatewithview); invalidatescreen();"
+	         />
 
 	</scene>
 	
@@ -78,6 +94,17 @@
 		</image>
 
 		<!-- place your scene hotspots here -->
+	<!-- nadir logo (distored hotspot) -->
+	<hotspot name="nadirlogo"
+	         url="skin/nadirlogo.png"
+	         ath="0"
+	         atv="90"
+	         distorted="true"
+	         scale="1.0"
+	         rotate="0.0"
+	         rotatewithview="false"
+	         onclick="switch(rotatewithview); invalidatescreen();"
+	         />
 
 	</scene>
 
@@ -100,6 +127,17 @@
 		</image>
 
 		<!-- place your scene hotspots here -->
+	<!-- nadir logo (distored hotspot) -->
+	<hotspot name="nadirlogo"
+	         url="skin/nadirlogo.png"
+	         ath="0"
+	         atv="90"
+	         distorted="true"
+	         scale="1.0"
+	         rotate="0.0"
+	         rotatewithview="false"
+	         onclick="switch(rotatewithview); invalidatescreen();"
+	         />
 
 	</scene>
 
@@ -122,6 +160,17 @@
 		</image>
 
 		<!-- place your scene hotspots here -->
+	<!-- nadir logo (distored hotspot) -->
+	<hotspot name="nadirlogo"
+	         url="skin/nadirlogo.png"
+	         ath="0"
+	         atv="90"
+	         distorted="true"
+	         scale="1.0"
+	         rotate="0.0"
+	         rotatewithview="false"
+	         onclick="switch(rotatewithview); invalidatescreen();"
+	         />
 
 	</scene>
 
@@ -144,7 +193,17 @@
 		</image>
 
 		<!-- place your scene hotspots here -->
-
+	<!-- nadir logo (distored hotspot) -->
+	<hotspot name="nadirlogo"
+	         url="skin/nadirlogo.png"
+	         ath="0"
+	         atv="90"
+	         distorted="true"
+	         scale="1.0"
+	         rotate="0.0"
+	         rotatewithview="false"
+	         onclick="switch(rotatewithview); invalidatescreen();"
+	         />
 	</scene>
 
 	<scene name="gr_top" title="Green Room" onstart="" thumburl="panos/node05.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -166,7 +225,17 @@
 		</image>
 
 		<!-- place your scene hotspots here -->
-
+	<!-- nadir logo (distored hotspot) -->
+	<hotspot name="nadirlogo"
+	         url="skin/nadirlogo.png"
+	         ath="0"
+	         atv="90"
+	         distorted="true"
+	         scale="1.0"
+	         rotate="0.0"
+	         rotatewithview="false"
+	         onclick="switch(rotatewithview); invalidatescreen();"
+	         />
 	</scene>
 
 	<scene name="gr_kitchen" title="Green Room: kitchen" onstart="" thumburl="panos/node06.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -188,7 +257,17 @@
 		</image>
 
 		<!-- place your scene hotspots here -->
-
+	<!-- nadir logo (distored hotspot) -->
+	<hotspot name="nadirlogo"
+	         url="skin/nadirlogo.png"
+	         ath="0"
+	         atv="90"
+	         distorted="true"
+	         scale="1.0"
+	         rotate="0.0"
+	         rotatewithview="false"
+	         onclick="switch(rotatewithview); invalidatescreen();"
+	         />
 	</scene>
 
 
