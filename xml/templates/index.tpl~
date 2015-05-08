@@ -8,20 +8,15 @@
 
 		<preview url="{$dataurl}/panos/{$v["url"]}/preview.jpg" />
 
-		<image type="CUBE" multires="true" tilesize="512">
-			<level tiledimagewidth="1304" tiledimageheight="1304">
-				<cube url="{$dataurl}/panos/{$v["url"]}/%s/l2/%v/l2_%s_%v_%h.jpg" />
-			</level>
-			<level tiledimagewidth="652" tiledimageheight="652">
-				<cube url="{$dataurl}/panos/{$v["url"]}/%s/l1/%v/l1_%s_%v_%h.jpg" />
-			</level>
+		<image>
+			<cube url="{$dataurl}/panos/{$v["url"]}/pano_%s.jpg" />
 			<mobile>
 				<cube url="{$dataurl}/panos/{$v["url"]}/mobile_%s.jpg" />
 			</mobile>
 		</image>
 
 		<!-- place your scene hotspots here -->
-{foreach from=$v]["hotspots"] item=vv}
+{foreach from=$v["hotspots"] item=vv}
 <hotspot name="..."
          type="image"
          url="..."
