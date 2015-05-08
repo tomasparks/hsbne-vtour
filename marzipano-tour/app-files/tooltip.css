@@ -1,0 +1,150 @@
+/* Based on Hint.css v1.3.4 (http://kushagragour.in/lab/hint) */
+
+[data-hint] {
+  position: relative;
+  display: inline-block;
+}
+
+[data-hint]:before, [data-hint]:after {
+  position: absolute;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1000000;
+  pointer-events: none;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  transition: 0.3s ease;
+  -webkit-transition-delay: 0ms;
+  -moz-transition-delay: 0ms;
+  transition-delay: 0ms;
+}
+
+[data-hint]:hover:before, [data-hint]:hover:after {
+  visibility: visible;
+  opacity: 1;
+}
+
+[data-hint]:hover:before, [data-hint]:hover:after {
+  -webkit-transition-delay: 100ms;
+  -moz-transition-delay: 100ms;
+  transition-delay: 100ms;
+}
+
+[data-hint]:before {
+  content: '';
+  position: absolute;
+  background: transparent;
+  border: 6px solid transparent;
+  z-index: 1000001;
+}
+
+/* Tooltip body */
+[data-hint]:after {
+  content: attr(data-hint);
+  background-color: rgb(58,68,84);
+  background-color: rgba(58,68,84,0.8);
+  color: white;
+  padding: 8px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+/* Arrow color */
+.hint--top:before {
+  border-top-color: rgb(58,68,84);
+  border-top-color: rgba(58,68,84,0.8); }
+.hint--bottom:before {
+  border-bottom-color: rgb(58,68,84);
+  border-bottom-color: rgba(58,68,84,0.8); }
+.hint--left:before {
+  border-left-color: rgb(58,68,84);
+  border-left-color: rgba(58,68,84,0.8); }
+.hint--right:before {
+  border-right-color: rgb(58,68,84);
+  border-right-color: rgba(58,68,84,0.8); }
+
+/**
+ * top tooltip
+ */
+.hint--top:before {
+  margin-bottom: -12px; }
+.hint--top:after {
+  margin-left: -18px; }
+.hint--top:before, .hint--top:after {
+  bottom: 100%;
+  left: 50%; }
+.hint--top:hover:after, .hint--top:hover:before {
+  -webkit-transform: translateY(-8px);
+  -moz-transform: translateY(-8px);
+  transform: translateY(-8px); }
+
+/**
+ * bottom tooltip
+ */
+.hint--bottom:before {
+  margin-top: -12px; }
+.hint--bottom:after {
+  margin-left: -18px; }
+.hint--bottom:before, .hint--bottom:after {
+  top: 100%;
+  left: 50%; }
+.hint--bottom:hover:after, .hint--bottom:hover:before {
+  -webkit-transform: translateY(8px);
+  -moz-transform: translateY(8px);
+  transform: translateY(8px); }
+
+/**
+ * right tooltip
+ */
+.hint--right:before {
+  margin-left: -12px;
+  margin-bottom: -6px; }
+.hint--right:after {
+  margin-bottom: -14px; }
+.hint--right:before, .hint--right:after {
+  left: 100%;
+  bottom: 50%; }
+.hint--right:hover:after, .hint--right:hover:before {
+  -webkit-transform: translateX(8px);
+  -moz-transform: translateX(8px);
+  transform: translateX(8px); }
+
+/**
+ * left tooltip
+ */
+.hint--left:before {
+  margin-right: -12px;
+  margin-bottom: -6px; }
+.hint--left:after {
+  margin-bottom: -14px; }
+.hint--left:before, .hint--left:after {
+  right: 100%;
+  bottom: 50%; }
+.hint--left:hover:after, .hint--left:hover:before {
+  -webkit-transform: translateX(-8px);
+  -moz-transform: translateX(-8px);
+  transform: translateX(-8px); }
+
+/** Disable tooltips on mobile mode */
+
+.touch [data-hint]:before, .touch [data-hint]:after {
+  position: absolute;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 1000000;
+  pointer-events: none;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  transition: 0.3s ease;
+  -webkit-transition-delay: 0ms;
+  -moz-transition-delay: 0ms;
+  transition-delay: 0ms;
+}

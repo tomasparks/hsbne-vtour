@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- loading json file ../building01.json: - No errors -->
+<krpano version="1.18" title="Building 1" onstart="startup();">
+
+
+	<include url="../skin/vtourskin.xml"/>
+
+
+
+
+	<action name="startup">
+		if(startscene === null, copy(startscene,scene[0].name));
+		loadscene(get(startscene), null, MERGE);
+	</action>
+
+<events onloadcomplete="js ( DisHtml(get(xml.scene)); ) ; "/>
+
+
+
+
+	<scene name="entry" title="Entry" onstart="" thumburl="../panos/node07.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto"/>
+
+		<preview url="../panos/node07.tiles/preview.jpg"/>
+
+		<image>
+			<cube url="../panos/node07.tiles/pano_%s.jpg"/>
+			<mobile>
+				<cube url="../panos/node07.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+<hotspot name="..." type="image" url="..." alturl="..." keep="false" devices="all" visible="true" enabled="true" handcursor="true" maskchildren="false" zorder="" style="" ath="0.0" atv="0.0" edge="center" zoom="false" distorted="false" rx="0.0" ry="0.0" rz="0.0" width="" height="" scale="1.0" rotate="0.0" alpha="1.0" onover="" onhover="" onout="" ondown="" onup="" onclick="" onloaded=""/>
+	</scene>
+
+
+	<scene name="gr_kitchen" title="Green Room: Kitchen" onstart="" thumburl="../panos/node06.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto"/>
+
+		<preview url="../panos/node06.tiles/preview.jpg"/>
+
+		<image>
+			<cube url="../panos/node06.tiles/pano_%s.jpg"/>
+			<mobile>
+				<cube url="../panos/node06.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+<hotspot name="..." type="image" url="..." alturl="..." keep="false" devices="all" visible="true" enabled="true" handcursor="true" maskchildren="false" zorder="" style="" ath="0.0" atv="0.0" edge="center" zoom="false" distorted="false" rx="0.0" ry="0.0" rz="0.0" width="" height="" scale="1.0" rotate="0.0" alpha="1.0" onover="" onhover="" onout="" ondown="" onup="" onclick="" onloaded=""/>
+	</scene>
+
+
+	<scene name="gr_top" title="Green Room" onstart="" thumburl="../panos/node05.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto"/>
+
+		<preview url="../panos/node05.tiles/preview.jpg"/>
+
+		<image>
+			<cube url="../panos/node05.tiles/pano_%s.jpg"/>
+			<mobile>
+				<cube url="../panos/node05.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+<hotspot name="..." type="image" url="..." alturl="..." keep="false" devices="all" visible="true" enabled="true" handcursor="true" maskchildren="false" zorder="" style="" ath="0.0" atv="0.0" edge="center" zoom="false" distorted="false" rx="0.0" ry="0.0" rz="0.0" width="" height="" scale="1.0" rotate="0.0" alpha="1.0" onover="" onhover="" onout="" ondown="" onup="" onclick="" onloaded=""/>
+	</scene>
+
+
+	<scene name="gr_electronics" title="Green Room: Electronic Station" onstart="" thumburl="../panos/node04.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto"/>
+
+		<preview url="../panos/node04.tiles/preview.jpg"/>
+
+		<image>
+			<cube url="../panos/node04.tiles/pano_%s.jpg"/>
+			<mobile>
+				<cube url="../panos/node04.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+<hotspot name="..." type="image" url="..." alturl="..." keep="false" devices="all" visible="true" enabled="true" handcursor="true" maskchildren="false" zorder="" style="" ath="0.0" atv="0.0" edge="center" zoom="false" distorted="false" rx="0.0" ry="0.0" rz="0.0" width="" height="" scale="1.0" rotate="0.0" alpha="1.0" onover="" onhover="" onout="" ondown="" onup="" onclick="" onloaded=""/>
+	</scene>
+
+
+	<scene name="gr_center" title="Green Room" onstart="" thumburl="../panos/node01.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto"/>
+
+		<preview url="../panos/node01.tiles/preview.jpg"/>
+
+		<image>
+			<cube url="../panos/node01.tiles/pano_%s.jpg"/>
+			<mobile>
+				<cube url="../panos/node01.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+<hotspot name="..." type="image" url="..." alturl="..." keep="false" devices="all" visible="true" enabled="true" handcursor="true" maskchildren="false" zorder="" style="" ath="0.0" atv="0.0" edge="center" zoom="false" distorted="false" rx="0.0" ry="0.0" rz="0.0" width="" height="" scale="1.0" rotate="0.0" alpha="1.0" onover="" onhover="" onout="" ondown="" onup="" onclick="" onloaded=""/>
+	</scene>
+
+
+	<scene name="gr_bottom" title="Green Room" onstart="" thumburl="../panos/node02.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto"/>
+
+		<preview url="../panos/node02.tiles/preview.jpg"/>
+
+		<image>
+			<cube url="../panos/node02.tiles/pano_%s.jpg"/>
+			<mobile>
+				<cube url="../panos/node02.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+<hotspot name="..." type="image" url="..." alturl="..." keep="false" devices="all" visible="true" enabled="true" handcursor="true" maskchildren="false" zorder="" style="" ath="0.0" atv="0.0" edge="center" zoom="false" distorted="false" rx="0.0" ry="0.0" rz="0.0" width="" height="" scale="1.0" rotate="0.0" alpha="1.0" onover="" onhover="" onout="" ondown="" onup="" onclick="" onloaded=""/>
+	</scene>
+
+
+	<scene name="gr_ham" title="Green Room: Ham Radio Station" onstart="" thumburl="../panos/node03.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto"/>
+
+		<preview url="../panos/node03.tiles/preview.jpg"/>
+
+		<image>
+			<cube url="../panos/node03.tiles/pano_%s.jpg"/>
+			<mobile>
+				<cube url="../panos/node03.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+<hotspot name="..." type="image" url="..." alturl="..." keep="false" devices="all" visible="true" enabled="true" handcursor="true" maskchildren="false" zorder="" style="" ath="0.0" atv="0.0" edge="center" zoom="false" distorted="false" rx="0.0" ry="0.0" rz="0.0" width="" height="" scale="1.0" rotate="0.0" alpha="1.0" onover="" onhover="" onout="" ondown="" onup="" onclick="" onloaded=""/>
+	</scene>
+
+
+
+
+</krpano>
