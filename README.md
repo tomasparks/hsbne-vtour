@@ -1,2 +1,2 @@
-# hsbne-vtour
+# hsbne virtual tour
 

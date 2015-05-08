@@ -1,0 +1,9 @@
+﻿<?xml version = '1.0'?>
+<my_params>
+	<play_objects>
+		<image init_loudness="0.5" />
+		<crop width="0.698" height="0.935" cx="0.482" cy="0.494" overlap_ratio="0.09"/>
+		<projection roll_A="" roll_B="0.5" pitch_A="0.0" pitch_B="" yaw_A="" yaw_B="" />
+		<view init_fov="120" init_filter="yes" lock_nadirs="yes" seg_lock="low" quality_lock="no" unlock_for_non_rectilinear="yes" />
+	</play_objects>
+</my_params>

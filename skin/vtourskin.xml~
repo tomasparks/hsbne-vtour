@@ -2,28 +2,6 @@
 	<!-- krpano 1.18.3 - Default Virtual Tour Skin -->
 
 	<!-- Global Skin settings (can be overridden in the 'outer' xml) -->
-	<skin_settings maps="false"
-	               maps_type="bing"
-	               maps_bing_api_key=""
-	               maps_zoombuttons="false"
-	               gyro="true"
-	               title="true"
-	               thumbs="true"
-	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
-	               thumbs_opened="false"
-	               thumbs_text="false"
-	               thumbs_dragging="true"
-	               thumbs_onhoverscrolling="false"
-	               thumbs_scrollbuttons="false"
-	               thumbs_scrollindicator="false"
-	               thumbs_loop="false"
-	               tooltips_thumbs="false"
-	               tooltips_hotspots="false"
-	               tooltips_mapspots="false"
-	               loadscene_flags="MERGE"
-	               loadscene_blend="BLEND(0.5)"
-	               controlbar_offset="20"
-	               />
 
 
 	<!-- Skin Styles -->

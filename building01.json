@@ -1,0 +1,117 @@
+{
+  "title": "Building 1",
+  "nodes": [
+    {
+      "id": "entry",
+      "title": "Entry",
+      "url": "node07.tiles",
+      "thumb": "thumb.jpg",
+      "lat": "",
+      "lng": "",
+      "heading": "",
+      "hlookat": "0",
+      "vlookat": "0",
+      "hotspots": [
+        {
+          "url": "http://"
+        }
+      ]
+    },
+    {
+      "id": "gr_kitchen",
+      "title": "Green Room: Kitchen",
+      "url": "node06.tiles",
+      "thumb": "thumb.jpg",
+      "lat": "",
+      "lng": "",
+      "heading": "",
+      "hlookat": "0",
+      "vlookat": "0",
+      "hotspots": [
+        {
+          "url": "http://"
+        }
+      ]
+    },
+    {
+      "id": "gr_top",
+      "title": "Green Room",
+      "url": "node05.tiles",
+      "thumb": "thumb.jpg",
+      "lat": "",
+      "lng": "",
+      "heading": "",
+      "hlookat": "0",
+      "vlookat": "0",
+      "hotspots": [
+        {
+          "url": "http://"
+        }
+      ]
+    },
+    {
+      "id": "gr_electronics",
+      "title": "Green Room: Electronic Station",
+      "url": "node04.tiles",
+      "thumb": "thumb.jpg",
+      "lat": "",
+      "lng": "",
+      "heading": "",
+      "hlookat": "0",
+      "vlookat": "0",
+      "hotspots": [
+        {
+          "url": "http://"
+        }
+      ]
+    },
+    {
+      "id": "gr_center",
+      "title": "Green Room",
+      "url": "node01.tiles",
+      "thumb": "thumb.jpg",
+      "lat": "",
+      "lng": "",
+      "heading": "",
+      "hlookat": "0",
+      "vlookat": "0",
+      "hotspots": [
+        {
+          "url": "http://"
+        }
+      ]
+    },
+    {
+      "id": "gr_bottom",
+      "title": "Green Room",
+      "url": "node02.tiles",
+      "thumb": "thumb.jpg",
+      "lat": "",
+      "lng": "",
+      "heading": "",
+      "hlookat": "0",
+      "vlookat": "0",
+      "hotspots": [
+        {
+          "url": "http://"
+        }
+      ]
+    },
+    {
+      "id": "gr_ham",
+      "title": "Green Room: Ham Radio Station",
+      "url": "node03.tiles",
+      "thumb": "thumb.jpg",
+      "lat": "",
+      "lng": "",
+      "heading": "",
+      "hlookat": "0",
+      "vlookat": "0",
+      "hotspots": [
+        {
+          "url": "http://"
+        }
+      ]
+    }
+  ]
+}
