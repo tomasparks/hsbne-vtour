@@ -3,9 +3,12 @@
 <krpano version="1.18" title="{$xml_title}" onstart="startup();">
 
 
-	<include url="{$dataurl}/skin/vtourskin.xml" />
+	<!--<include url="{$dataurl}/skin/vtourskin.xml" />-->
 
-
+	<!-- skin_hotspotstyle - style for the hotspots (note - the onclick event will be overwritten here and can't be set directly at the hotspot! the hotspots need to have a 'linkedscene' attribute to be clickable) -->
+	<style name="skin_hotspotstyle" url="{$dataurl}/skin/vtourskin_hotspot.png" scale="0.5" edge="top" oy="0" distorted="false"
+	       tooltip=""
+	       />
 
 
 	<action name="startup">
@@ -14,12 +17,4 @@
 	</action>
 
 <events onloadcomplete="js ( DisHtml(get(xml.scene)); ) ; " />
-
-	<!-- events - update logo rotation with pano rotation -->
-	<events name="nadirlogorotation"
-	        onviewchange="if(hotspot[nadirlogo].rotatewithview, set(hotspot[nadirlogo].rotate,get(view.hlookat)) );"
-	        />
-
-
-
 

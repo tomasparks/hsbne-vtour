@@ -1,0 +1,795 @@
+<krpano version="1.18" title="Virtual Tour" onstart="startup();">
+
+	<include url="skin/vtourskin.xml"/>
+
+	<!-- set skin settings: bingmaps? gyro? thumbnails? tooltips? -->
+	<skin_settings maps="false" maps_type="bing" maps_bing_api_key="" maps_zoombuttons="false" gyro="true" title="true" thumbs="true" thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160" thumbs_opened="false" thumbs_text="false" thumbs_dragging="true" thumbs_onhoverscrolling="false" thumbs_scrollbuttons="false" thumbs_scrollindicator="false" thumbs_loop="false" tooltips_thumbs="false" tooltips_hotspots="false" tooltips_mapspots="false" loadscene_flags="MERGE" loadscene_blend="BLEND(0.5)" controlbar_offset="20"/>
+
+	<!-- set optional skin logo url -->
+	<layer name="skin_logo" url="" scale="0.25" opened_onclick="openurl('...',_blank);"/>
+
+	<style name="category_base" url="skin/vtourskin.png"/>
+	<layer name="category_bar" keep="true" type="container" bgcolor="0x000000" bgalpha="0.5" align="lefttop" width="100%" height="40" x="0" y="20" y_opened="20" y_closed="-42" zorder="3">
+    <layer name="category_topborder" style="category_base" crop="2|0|60|12" align="topleft" edge="bottomleft" width="100%" height="12" x="0" y="0" enabled="false"/>
+    <layer name="category_btmborder" style="category_base" crop="2|52|60|12" align="bottomleft" edge="topleft" width="100%" height="12" x="0" y="0" enabled="false"/>
+  	<layer name="category_items" keep="true" type="container" background="false" align="lefttop" width="100%" height="20" x="0" y="10"/>
+  </layer>
+
+
+	<action name="startup">
+		if(startscene === null, copy(startscene,scene[15].name));
+		loadscene(get(startscene), null, MERGE);
+	</action>
+
+	
+	<scene name="scene_1after" title="Location 1 After" onstart="loadcategories();" thumburl="panos/1after.tiles/thumb.jpg" lat="" lng="" heading="" location="1" category="After">
+
+		<view hlookat="13.267" vlookat="0.456" fovtype="MFOV" fov="90.000" fovmin="70" fovmax="140" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" maxpixelzoom="1.5"/>
+
+		<preview url="panos/1after.tiles/preview.jpg"/>
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3410" tiledimageheight="3410">
+				<cube url="panos/1after.tiles/%s/l3/%v/l3_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="1706" tiledimageheight="1706">
+				<cube url="panos/1after.tiles/%s/l2/%v/l2_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="854" tiledimageheight="854">
+				<cube url="panos/1after.tiles/%s/l1/%v/l1_%s_%v_%h.jpg"/>
+			</level>
+			<mobile>
+				<cube url="panos/1after.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="47.939" atv="0.578" linkedscene="scene_3after"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-44.419" atv="-0.016" linkedscene="scene_2after"/>
+
+	</scene>
+
+	<scene name="scene_1during" title="Location 1 - Building" onstart="loadcategories();" thumburl="panos/1during.tiles/thumb.jpg" lat="" lng="" heading="" location="1" category="Building">
+
+		<view hlookat="13.267" vlookat="0.456" fovtype="MFOV" fov="90.000" fovmin="70" fovmax="140" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="67" maxpixelzoom="1.5"/>
+
+		<preview url="panos/1during.tiles/preview.jpg"/>
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3404" tiledimageheight="3404">
+				<cube url="panos/1during.tiles/%s/l3/%v/l3_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="1702" tiledimageheight="1702">
+				<cube url="panos/1during.tiles/%s/l2/%v/l2_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="852" tiledimageheight="852">
+				<cube url="panos/1during.tiles/%s/l1/%v/l1_%s_%v_%h.jpg"/>
+			</level>
+			<mobile>
+				<cube url="panos/1during.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="47.939" atv="0.578" linkedscene="scene_3during"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-44.419" atv="-0.016" linkedscene="scene_2during"/>
+
+	</scene>
+
+	<scene name="scene_1before" title="Location 1 - Before" onstart="loadcategories();" thumburl="panos/1before.tiles/thumb.jpg" lat="" lng="" heading="" location="1" category="Before">
+
+		<view hlookat="13.267" vlookat="0.456" fovtype="MFOV" fov="90.000" fovmin="70" fovmax="140" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="67" maxpixelzoom="1.5"/>
+
+		<preview url="panos/1before.tiles/preview.jpg"/>
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3412" tiledimageheight="3412">
+				<cube url="panos/1before.tiles/%s/l3/%v/l3_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="1706" tiledimageheight="1706">
+				<cube url="panos/1before.tiles/%s/l2/%v/l2_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="854" tiledimageheight="854">
+				<cube url="panos/1before.tiles/%s/l1/%v/l1_%s_%v_%h.jpg"/>
+			</level>
+			<mobile>
+				<cube url="panos/1before.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="47.939" atv="0.578" linkedscene="scene_3before"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-44.419" atv="-0.016" linkedscene="scene_2before"/>
+
+	</scene>
+
+	<scene name="scene_2after" title="Location 2 - After" onstart="loadcategories();" thumburl="panos/2after.tiles/thumb.jpg" lat="" lng="" heading="" location="2" category="After">
+
+		<view hlookat="-44.860" vlookat="-0.058" fovtype="MFOV" fov="90.000" fovmin="70" fovmax="140" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" maxpixelzoom="1.5"/>
+
+		<preview url="panos/2after.tiles/preview.jpg"/>
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3408" tiledimageheight="3408">
+				<cube url="panos/2after.tiles/%s/l3/%v/l3_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="1704" tiledimageheight="1704">
+				<cube url="panos/2after.tiles/%s/l2/%v/l2_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="852" tiledimageheight="852">
+				<cube url="panos/2after.tiles/%s/l1/%v/l1_%s_%v_%h.jpg"/>
+			</level>
+			<mobile>
+				<cube url="panos/2after.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="44.767" atv="0.021" linkedscene="scene_1after"/>
+
+	</scene>
+
+	<scene name="scene_2during" title="Location 2 - Building" onstart="loadcategories();" thumburl="panos/2during.tiles/thumb.jpg" lat="" lng="" heading="" location="2" category="Building">
+
+		<view hlookat="-44.860" vlookat="-0.058" fovtype="MFOV" fov="90.000" fovmin="70" fovmax="140" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="67" maxpixelzoom="1.5"/>
+
+		<preview url="panos/2during.tiles/preview.jpg"/>
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3404" tiledimageheight="3404">
+				<cube url="panos/2during.tiles/%s/l3/%v/l3_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="1702" tiledimageheight="1702">
+				<cube url="panos/2during.tiles/%s/l2/%v/l2_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="852" tiledimageheight="852">
+				<cube url="panos/2during.tiles/%s/l1/%v/l1_%s_%v_%h.jpg"/>
+			</level>
+			<mobile>
+				<cube url="panos/2during.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="44.767" atv="0.021" linkedscene="scene_1during"/>
+
+	</scene>
+
+	<scene name="scene_2before" title="Location 2 - Before" onstart="loadcategories();" thumburl="panos/2before.tiles/thumb.jpg" lat="" lng="" heading="" location="2" category="Before">
+
+		<view hlookat="-44.860" vlookat="-0.058" fovtype="MFOV" fov="90.000" fovmin="70" fovmax="140" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="67" maxpixelzoom="1.5"/>
+
+		<preview url="panos/2before.tiles/preview.jpg"/>
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3416" tiledimageheight="3416">
+				<cube url="panos/2before.tiles/%s/l3/%v/l3_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="1708" tiledimageheight="1708">
+				<cube url="panos/2before.tiles/%s/l2/%v/l2_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="854" tiledimageheight="854">
+				<cube url="panos/2before.tiles/%s/l1/%v/l1_%s_%v_%h.jpg"/>
+			</level>
+			<mobile>
+				<cube url="panos/2before.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="44.767" atv="0.021" linkedscene="scene_1before"/>
+
+	</scene>
+
+	<scene name="scene_3after" title="Location 3 - After" onstart="loadcategories();" thumburl="panos/3after.tiles/thumb.jpg" lat="" lng="" heading="" location="3" category="After">
+
+		<view hlookat="-43.125" vlookat="-0.397" fovtype="MFOV" fov="90.000" fovmin="70" fovmax="140" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" maxpixelzoom="1.5"/>
+
+		<preview url="panos/3after.tiles/preview.jpg"/>
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3406" tiledimageheight="3406">
+				<cube url="panos/3after.tiles/%s/l3/%v/l3_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="1704" tiledimageheight="1704">
+				<cube url="panos/3after.tiles/%s/l2/%v/l2_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="852" tiledimageheight="852">
+				<cube url="panos/3after.tiles/%s/l1/%v/l1_%s_%v_%h.jpg"/>
+			</level>
+			<mobile>
+				<cube url="panos/3after.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-43.125" atv="-0.397" linkedscene="scene_4after"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="133.471" atv="-0.091" linkedscene="scene_1after"/>
+
+	</scene>
+
+	<scene name="scene_3during" title="Location 3 - Building" onstart="loadcategories();" thumburl="panos/3during.tiles/thumb.jpg" lat="" lng="" heading="" location="3" category="Building">
+
+		<view hlookat="-43.125" vlookat="-0.397" fovtype="MFOV" fov="90.000" fovmin="70" fovmax="140" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="67" maxpixelzoom="1.5"/>
+
+		<preview url="panos/3during.tiles/preview.jpg"/>
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3408" tiledimageheight="3408">
+				<cube url="panos/3during.tiles/%s/l3/%v/l3_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="1704" tiledimageheight="1704">
+				<cube url="panos/3during.tiles/%s/l2/%v/l2_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="852" tiledimageheight="852">
+				<cube url="panos/3during.tiles/%s/l1/%v/l1_%s_%v_%h.jpg"/>
+			</level>
+			<mobile>
+				<cube url="panos/3during.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-43.125" atv="-0.397" linkedscene="scene_4during"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="133.471" atv="-0.091" linkedscene="scene_1during"/>
+
+	</scene>
+
+	<scene name="scene_3before" title="Location 3 - Before" onstart="loadcategories();" thumburl="panos/3before.tiles/thumb.jpg" lat="" lng="" heading="" location="3" category="Before">
+
+		<view hlookat="-43.125" vlookat="-0.397" fovtype="MFOV" fov="90.000" fovmin="70" fovmax="140" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="67" maxpixelzoom="1.5"/>
+
+		<preview url="panos/3before.tiles/preview.jpg"/>
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3416" tiledimageheight="3416">
+				<cube url="panos/3before.tiles/%s/l3/%v/l3_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="1708" tiledimageheight="1708">
+				<cube url="panos/3before.tiles/%s/l2/%v/l2_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="854" tiledimageheight="854">
+				<cube url="panos/3before.tiles/%s/l1/%v/l1_%s_%v_%h.jpg"/>
+			</level>
+			<mobile>
+				<cube url="panos/3before.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-43.125" atv="-0.397" linkedscene="scene_4before"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="133.471" atv="-0.091" linkedscene="scene_1before"/>
+
+	</scene>
+
+	<scene name="scene_4after" title="Location 4 - After" onstart="loadcategories();" thumburl="panos/4after.tiles/thumb.jpg" lat="" lng="" heading="" location="4" category="After">
+
+		<view hlookat="-133.618" vlookat="0.614" fovtype="MFOV" fov="90.000" fovmin="70" fovmax="140" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" maxpixelzoom="1.5"/>
+
+		<preview url="panos/4after.tiles/preview.jpg"/>
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3426" tiledimageheight="3426">
+				<cube url="panos/4after.tiles/%s/l3/%v/l3_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="1714" tiledimageheight="1714">
+				<cube url="panos/4after.tiles/%s/l2/%v/l2_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="858" tiledimageheight="858">
+				<cube url="panos/4after.tiles/%s/l1/%v/l1_%s_%v_%h.jpg"/>
+			</level>
+			<mobile>
+				<cube url="panos/4after.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-133.618" atv="0.614" linkedscene="scene_5after"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="44.528" atv="1.028" linkedscene="scene_3after"/>
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-158.176" atv="0.191" linkedscene="scene_6after"/>
+
+	</scene>
+
+	<scene name="scene_4during" title="Location 4 - Building" onstart="loadcategories();" thumburl="panos/4during.tiles/thumb.jpg" lat="" lng="" heading="" location="4" category="Building">
+
+		<view hlookat="-133.618" vlookat="0.614" fovtype="MFOV" fov="90.000" fovmin="70" fovmax="140" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="67" maxpixelzoom="1.5"/>
+
+		<preview url="panos/4during.tiles/preview.jpg"/>
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3414" tiledimageheight="3414">
+				<cube url="panos/4during.tiles/%s/l3/%v/l3_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="1708" tiledimageheight="1708">
+				<cube url="panos/4during.tiles/%s/l2/%v/l2_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="854" tiledimageheight="854">
+				<cube url="panos/4during.tiles/%s/l1/%v/l1_%s_%v_%h.jpg"/>
+			</level>
+			<mobile>
+				<cube url="panos/4during.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-133.618" atv="0.614" linkedscene="scene_5during"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="44.528" atv="1.028" linkedscene="scene_3during"/>
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-158.176" atv="0.191" linkedscene="scene_6during"/>
+
+	</scene>
+
+	<scene name="scene_4before" title="Location 4 - Before" onstart="loadcategories();" thumburl="panos/4before.tiles/thumb.jpg" lat="" lng="" heading="" location="4" category="Before">
+
+		<view hlookat="-133.618" vlookat="0.614" fovtype="MFOV" fov="90.000" fovmin="70" fovmax="140" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="67" maxpixelzoom="1.5"/>
+
+		<preview url="panos/4before.tiles/preview.jpg"/>
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3412" tiledimageheight="3412">
+				<cube url="panos/4before.tiles/%s/l3/%v/l3_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="1706" tiledimageheight="1706">
+				<cube url="panos/4before.tiles/%s/l2/%v/l2_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="854" tiledimageheight="854">
+				<cube url="panos/4before.tiles/%s/l1/%v/l1_%s_%v_%h.jpg"/>
+			</level>
+			<mobile>
+				<cube url="panos/4before.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="44.528" atv="1.028" linkedscene="scene_3before"/>
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-158.176" atv="0.191" linkedscene="scene_6before"/>
+
+	</scene>
+
+	<scene name="scene_5after" title="Location 5 - After" onstart="loadcategories();" thumburl="panos/5after.tiles/thumb.jpg" lat="" lng="" heading="" location="5" category="After">
+
+		<view hlookat="43.538" vlookat="0.298" fovtype="MFOV" fov="90.000" fovmin="70" fovmax="140" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" maxpixelzoom="1.5"/>
+
+		<preview url="panos/5after.tiles/preview.jpg"/>
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3406" tiledimageheight="3406">
+				<cube url="panos/5after.tiles/%s/l3/%v/l3_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="1704" tiledimageheight="1704">
+				<cube url="panos/5after.tiles/%s/l2/%v/l2_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="852" tiledimageheight="852">
+				<cube url="panos/5after.tiles/%s/l1/%v/l1_%s_%v_%h.jpg"/>
+			</level>
+			<mobile>
+				<cube url="panos/5after.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="43.538" atv="0.298" linkedscene="scene_4after"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="70.371" atv="0.251" linkedscene="scene_6after"/>
+
+	</scene>
+
+	<scene name="scene_5during" title="Location 5 - Building" onstart="loadcategories();" thumburl="panos/5during.tiles/thumb.jpg" lat="" lng="" heading="" location="5" category="Building">
+
+		<view hlookat="43.538" vlookat="0.298" fovtype="MFOV" fov="90.000" fovmin="70" fovmax="140" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="67" maxpixelzoom="1.5"/>
+
+		<preview url="panos/5during.tiles/preview.jpg"/>
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3406" tiledimageheight="3406">
+				<cube url="panos/5during.tiles/%s/l3/%v/l3_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="1704" tiledimageheight="1704">
+				<cube url="panos/5during.tiles/%s/l2/%v/l2_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="852" tiledimageheight="852">
+				<cube url="panos/5during.tiles/%s/l1/%v/l1_%s_%v_%h.jpg"/>
+			</level>
+			<mobile>
+				<cube url="panos/5during.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="43.538" atv="0.298" linkedscene="scene_4during"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="70.371" atv="0.251" linkedscene="scene_6during"/>
+
+	</scene>
+
+	<scene name="scene_5before" title="Location 5 - Before" onstart="loadcategories();" thumburl="panos/5before.tiles/thumb.jpg" lat="" lng="" heading="" location="5" category="Before">
+
+		<view hlookat="43.538" vlookat="0.298" fovtype="MFOV" fov="90.000" fovmin="70" fovmax="140" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="67" maxpixelzoom="1.5"/>
+
+		<preview url="panos/5before.tiles/preview.jpg"/>
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3416" tiledimageheight="3416">
+				<cube url="panos/5before.tiles/%s/l3/%v/l3_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="1708" tiledimageheight="1708">
+				<cube url="panos/5before.tiles/%s/l2/%v/l2_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="854" tiledimageheight="854">
+				<cube url="panos/5before.tiles/%s/l1/%v/l1_%s_%v_%h.jpg"/>
+			</level>
+			<mobile>
+				<cube url="panos/5before.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="43.538" atv="0.298" linkedscene="scene_4before"/>
+
+	</scene>
+
+	<scene name="scene_6after" title="Location 6 - After" onstart="loadcategories();" thumburl="panos/6after.tiles/thumb.jpg" lat="" lng="" heading="" location="6" category="After">
+
+		<view hlookat="226.254" vlookat="-0.292" fovtype="MFOV" fov="90.000" fovmin="70" fovmax="140" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="90" maxpixelzoom="1.5"/>
+
+		<preview url="panos/6after.tiles/preview.jpg"/>
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3410" tiledimageheight="3410">
+				<cube url="panos/6after.tiles/%s/l3/%v/l3_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="1706" tiledimageheight="1706">
+				<cube url="panos/6after.tiles/%s/l2/%v/l2_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="854" tiledimageheight="854">
+				<cube url="panos/6after.tiles/%s/l1/%v/l1_%s_%v_%h.jpg"/>
+			</level>
+			<mobile>
+				<cube url="panos/6after.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="245.014" atv="-0.079" linkedscene="scene_5after"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="385.105" atv="-0.460" linkedscene="scene_4after"/>
+
+	</scene>
+
+	<scene name="scene_6light2" title="Location 6 - Night 1" onstart="loadcategories();" thumburl="panos/6light2.tiles/thumb.jpg" lat="" lng="" heading="" location="6" category="Night1">
+
+		<view hlookat="226.254" vlookat="-0.292" fovtype="MFOV" fov="90.000" fovmin="70" fovmax="140" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="67" maxpixelzoom="1.5"/>
+
+		<preview url="panos/6light2.tiles/preview.jpg"/>
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3420" tiledimageheight="3420">
+				<cube url="panos/6light2.tiles/%s/l3/%v/l3_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="1710" tiledimageheight="1710">
+				<cube url="panos/6light2.tiles/%s/l2/%v/l2_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="856" tiledimageheight="856">
+				<cube url="panos/6light2.tiles/%s/l1/%v/l1_%s_%v_%h.jpg"/>
+			</level>
+			<mobile>
+				<cube url="panos/6light2.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="245.014" atv="-0.079" linkedscene="scene_5after"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="385.105" atv="-0.460" linkedscene="scene_4after"/>
+
+	</scene>
+  
+	<scene name="scene_6light1" title="Location 6 - Night 2" onstart="loadcategories();" thumburl="panos/6light1.tiles/thumb.jpg" lat="" lng="" heading="" location="6" category="Night2">
+
+		<view hlookat="226.254" vlookat="-0.292" fovtype="MFOV" fov="90.000" fovmin="70" fovmax="140" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="67" maxpixelzoom="1.5"/>
+
+		<preview url="panos/6light1.tiles/preview.jpg"/>
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3412" tiledimageheight="3412">
+				<cube url="panos/6light1.tiles/%s/l3/%v/l3_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="1706" tiledimageheight="1706">
+				<cube url="panos/6light1.tiles/%s/l2/%v/l2_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="854" tiledimageheight="854">
+				<cube url="panos/6light1.tiles/%s/l1/%v/l1_%s_%v_%h.jpg"/>
+			</level>
+			<mobile>
+				<cube url="panos/6light1.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="245.014" atv="-0.079" linkedscene="scene_5after"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="385.105" atv="-0.460" linkedscene="scene_4after"/>
+
+	</scene>
+
+	<scene name="scene_6during" title="Location 6 - Building" onstart="loadcategories();" thumburl="panos/6during.tiles/thumb.jpg" lat="" lng="" heading="" location="6" category="Building">
+
+		<view hlookat="226.254" vlookat="-0.292" fovtype="MFOV" fov="90.000" fovmin="70" fovmax="140" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="67" maxpixelzoom="1.5"/>
+
+		<preview url="panos/6during.tiles/preview.jpg"/>
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3408" tiledimageheight="3408">
+				<cube url="panos/6during.tiles/%s/l3/%v/l3_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="1704" tiledimageheight="1704">
+				<cube url="panos/6during.tiles/%s/l2/%v/l2_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="852" tiledimageheight="852">
+				<cube url="panos/6during.tiles/%s/l1/%v/l1_%s_%v_%h.jpg"/>
+			</level>
+			<mobile>
+				<cube url="panos/6during.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="245.014" atv="-0.079" linkedscene="scene_5during"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="385.105" atv="-0.460" linkedscene="scene_4during"/>
+
+	</scene>
+
+	<scene name="scene_6before" title="Location 6 - Before" onstart="loadcategories();" thumburl="panos/6before.tiles/thumb.jpg" lat="" lng="" heading="" location="6" category="Before">
+
+		<view hlookat="226.254" vlookat="-0.292" fovtype="MFOV" fov="90.000" fovmin="70" fovmax="140" limitview="range" hlookatmin="-180" hlookatmax="180" vlookatmin="-90" vlookatmax="67" maxpixelzoom="1.5"/>
+
+		<preview url="panos/6before.tiles/preview.jpg"/>
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="3422" tiledimageheight="3422">
+				<cube url="panos/6before.tiles/%s/l3/%v/l3_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="1712" tiledimageheight="1712">
+				<cube url="panos/6before.tiles/%s/l2/%v/l2_%s_%v_%h.jpg"/>
+			</level>
+			<level tiledimagewidth="856" tiledimageheight="856">
+				<cube url="panos/6before.tiles/%s/l1/%v/l1_%s_%v_%h.jpg"/>
+			</level>
+			<mobile>
+				<cube url="panos/6before.tiles/mobile_%s.jpg"/>
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="245.014" atv="-0.079" linkedscene="scene_5before"/>
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="385.105" atv="-0.460" linkedscene="scene_4before"/>
+
+	</scene>
+
+
+
+
+  <action name="loadcategories">
+    <!-- remove all category item layers -->
+    for(set(i, get(layer.count)), i GE 0, dec(i), 
+			if(layer[get(i)].parent == category_items,
+        removelayer(get(layer[get(i)].name));
+			)
+		);
+    
+    set(scene_location, get(scene[get(xml.scene)].location));
+    set(x, 30);
+    
+    <!-- for each scene check is the location matchs the current location -->
+	  for(set(i,0), i LT scene.count, inc(i),
+      if(scene[get(i)].location == scene_location,
+        copy(new_layer, scene[get(i)].category);
+        
+        <!-- add the category menu item if it doesn't already exist -->
+        if(layer[get(new_layer)] === null,
+          copy(scene_name, scene[get(i)].name);
+          copy(current_scene_name, scene[get(xml.scene)].name);
+          
+          addlayer(get(new_layer));
+          set(layer[get(new_layer)].url, "%SWFPATH%/plugins/textfield.swf");
+          set(layer[get(new_layer)].background, false);
+          set(layer[get(new_layer)].textshadow, 1);
+          set(layer[get(new_layer)].html, get(new_layer));
+          set(layer[get(new_layer)].align, topleft);
+          set(layer[get(new_layer)].x, get(x));
+          inc(x,120);
+          set(layer[get(new_layer)].y, 0);
+          set(layer[get(new_layer)].parent, category_items);
+          
+          <!-- if it's not the current category include a onclick action -->
+          if(current_scene_name != scene_name,
+            txtadd(onclick_action, 'loadscene(', get(scene_name), ', null, KEEPVIEW, BLEND(1)); skin_addthumbs();');
+            set(layer[get(new_layer)].onclick, get(onclick_action) );
+            set(layer[get(new_layer)].css, "color:#CCCCCC; font-family:Arial; font-weight:normal; font-size:16px;");
+            set(layer[get(new_layer)].enabled, true);
+          <!-- else  display in different colour -->
+          ,
+            set(layer[get(new_layer)].css, "color:#FFFFFF; font-family:Arial; font-weight:bold; font-size:16px;");
+            set(layer[get(new_layer)].enabled, false);
+          );
+        );
+      );
+    );
+  </action>
+	
+	<action name="skin_addthumbs">
+    for(set(i, get(layer.count)), i GE 0, dec(i),
+      if(layer[get(i)].parent == 'skin_thumbs',
+        if(layer[get(i)].linkedscene != scene[get(xml.scene)].name, 
+          removelayer(get(layer[get(i)].name));
+        );
+      )
+    );
+    
+		<!-- Counter on how many scenes to be included -->
+		set(number_of_used_scenes,0);
+    
+	  for(set(i,0), i LT scene.count, inc(i),
+      if(scene[get(i)].category == scene[get(xml.scene)].category , inc(number_of_used_scenes););
+    );    
+    
+		copy(thumbwidth, skin_settings.thumbs_width);
+		copy(thumbheight, skin_settings.thumbs_height);
+		copy(thumbpadding, skin_settings.thumbs_padding);
+		copy(thumbcrop, skin_settings.thumbs_crop);
+
+		if(device.mobile,
+			mul(thumbwidth,2);
+			mul(thumbheight,2);
+			mul(thumbpadding,2);
+		  );
+
+		add(thumbxoffset, thumbwidth, thumbpadding);
+		mul(thumbxcenter, thumbxoffset, 0.5);
+		
+		<!-- scene.count can't be used as we don't use all scenes in thumb list 
+		mul(thumbbarwidth, thumbxoffset, scene.count); -->
+		
+		mul(thumbbarwidth, thumbxoffset, get(number_of_used_scenes));
+		
+		add(thumbbarwidth, thumbpadding);
+		add(thumbbarheight, thumbpadding, thumbheight);
+		add(thumbbarheight, thumbpadding);
+
+		if (skin_settings.thumbs_scrollindicator,
+			copy(layer[skin_thumbs_scrollindicator].y, thumbbarheight);
+			add(thumbbarheight, layer[skin_thumbs_scrollindicator].height);
+		);
+
+		copy(layer[skin_thumbs].height, thumbbarheight);
+		copy(layer[skin_thumbs].width, thumbbarwidth);
+
+		mul(halfheight, thumbbarheight, 0.5);
+		copy(layer[skin_thumbs_scrollleft].y, halfheight);
+		copy(layer[skin_thumbs_scrollright].y, halfheight);
+		
+		
+		<!-- New counters -->
+		set(number_of_active_thumbs,0);
+		set(adding_thumbs_from_zerro,0);
+		
+		for(set(i,0), i LT scene.count, inc(i),
+			if(scene[get(i)].category == scene[get(xml.scene)].category,
+			<!-- txtadd(thumbname,'skin_thumb_',get(i)); Not every scene is used so we have to count used based on new attribute in scene definitions -->                   
+      txtadd(thumbname,'skin_thumb_',get(adding_thumbs_from_zerro));       
+      copy(scene[get(i)].newindex, number_of_active_thumbs);  
+			inc(number_of_active_thumbs);
+			   
+			addlayer(get(thumbname)); 
+			copy(layer[get(thumbname)].url, scene[get(i)].thumburl);
+			set(layer[get(thumbname)].keep, true);
+			set(layer[get(thumbname)].parent, 'skin_thumbs');
+			set(layer[get(thumbname)].align, lefttop);
+			copy(layer[get(thumbname)].crop, thumbcrop);
+			copy(layer[get(thumbname)].width, thumbwidth);
+			copy(layer[get(thumbname)].height, thumbheight);
+			
+			<!--mul(thumbx, i, thumbxoffset);-->
+			mul(thumbx, adding_thumbs_from_zerro, thumbxoffset);
+									
+			add(thumbx, thumbpadding);
+			copy(layer[get(thumbname)].x, thumbx);
+			copy(layer[get(thumbname)].y, thumbpadding);
+			add(scene[get(i)].thumbx, thumbx, thumbxcenter);
+			copy(scene[get(i)].thumby, thumbpadding);
+			set(layer[get(thumbname)].linkedscene, get(scene[get(i)].name) );
+			
+			set(layer[get(thumbname)].onclick, copy(layer[skin_thumbborder].parent, name); loadscene(get(linkedscene), null, MERGE, BLEND(0.5)); );
+			if(skin_settings.tooltips_thumbs,
+				set(layer[get(thumbname)].onhover, showtext(get(scene[get(linkedscene)].title),SKIN_TOOLTIPS); );
+			  );
+			if(skin_settings.thumbs_text,
+				<!--txtadd(thumbtext, 'skin_thumbtext_', get(i));-->
+				txtadd(thumbtext, 'skin_thumbtext_', get(adding_thumbs_from_zerro));
+				addlayer(get(thumbtext));
+				layer[get(thumbtext)].loadstyle(skin_thumbtext_style);
+				set(layer[get(thumbtext)].keep, true);
+				set(layer[get(thumbtext)].parent, get(thumbname));
+				set(layer[get(thumbtext)].html, get(scene[get(i)].title));
+			  );
+		   inc(adding_thumbs_from_zerro);
+		   );
+		   
+		  );
+	</action>
+	<action name="skin_update_scene_infos"> 
+		if(xml.scene !== null,
+			if(scene[get(xml.scene)].category == scene[get(xml.scene)].category, <!-- do if thumbs included only -->
+				if(scene[get(xml.scene)].newindex GE 0,
+					if(title, txtadd(layer[skin_title].html, get(title), ' - ', get(scene[get(xml.scene)].title) ); , copy(layer[skin_title].html, scene[get(xml.scene)].title ); );
+					delayedcall(0.1, set(layer[skin_title].visible,true) );
+			
+					if(scene[get(xml.scene)].newindex GT 0, 
+						set(layer[skin_btn_prev].enabled, true); 
+						set(layer[skin_btn_prev].alpha, 1.0);
+					  ,
+						set(layer[skin_btn_prev].enabled, false); 
+						set(layer[skin_btn_prev].alpha, 0.3);
+					  );
+			
+					<!--sub(lastsceneindex, scene.count, 1);-->				
+					sub(lastsceneindex, number_of_active_thumbs, 1);
+					
+					if(scene[get(xml.scene)].newindex LT lastsceneindex,
+						set(layer[skin_btn_next].enabled, true); 
+						set(layer[skin_btn_next].alpha, 1.0);
+					  ,
+						set(layer[skin_btn_next].enabled, false); 
+						set(layer[skin_btn_next].alpha, 0.3);
+					  );
+			
+					<!--txtadd(layer[skin_thumbborder].parent, 'skin_thumb_', get(scene[get(xml.scene)].index));-->
+					txtadd(layer[skin_thumbborder].parent, 'skin_thumb_', get(scene[get(xml.scene)].newindex));
+					set(layer[skin_thumbborder].visible, true);
+			
+					if(scene[get(xml.scene)].mapspotname,
+						layer[skin_map].activatespot(get(scene[get(xml.scene)].mapspotname));
+						layer[skin_map].pantospot(get(scene[get(xml.scene)].mapspotname));
+					  );
+				  );
+					,
+					<!-- Thumb not included. Turn off border for now -->					
+					set(layer[skin_thumbborder].visible, false);
+					set(layer[skin_btn_prev].enabled, false);
+					set(layer[skin_btn_prev].alpha, 0.3);
+					set(layer[skin_btn_next].enabled, false); 
+					set(layer[skin_btn_next].alpha, 0.3);
+					if(title, txtadd(layer[skin_title].html, get(title), ' - ', get(scene[get(xml.scene)].title) ); , copy(layer[skin_title].html, scene[get(xml.scene)].title ); );
+					delayedcall(0.1, set(layer[skin_title].visible,true) );
+				); 
+		  );
+	</action>
+	<action name="skin_nextscene">
+    if(skin_settings.thumbs_loop,
+     skin_nextscene_loop(-1), 
+     
+  		wait(0);
+  		find_next_scene(%1);
+  		<!--add(newsceneindex, scene[get(xml.scene)].newindex, %1);--> 
+  		if(newsceneindex GE 0,
+  			<!--if(newsceneindex LT number_of_active_thumbs,-->
+  			if(newsceneindex LT scene.count,
+  				<!--txtadd(layer[skin_thumbborder].parent, 'skin_thumb_', get(newsceneindex));-->
+  				txtadd(layer[skin_thumbborder].parent, 'skin_thumb_', get(scene[get(newsceneindex)].newindex));
+  				layer[skin_thumbs].scrolltocenter(get(scene[get(newsceneindex)].thumbx), get(scene[get(newsceneindex)].thumby));
+  				loadscene(get(scene[get(newsceneindex)].name), null, MERGE, BLEND(0.5));
+  			  );
+  		  );
+      );
+	</action>
+  
+	<action name="find_next_scene">		
+		if(%1 EQ '+1',add(start_search_from,scene[get(xml.scene)].index,1);set(scene_match_found,false);
+			for(set(scene_match,get(start_search_from)), scene_match LT	 scene.count, inc(scene_match),			
+				ifnot(scene_match_found,if(scene[get(scene_match)].category == scene[get(xml.scene)].category,set(scene_match_found,true);set(newsceneindex,get(scene[get(scene_match)].index));););
+			);			
+		);
+		if(%1 EQ '-1',sub(start_search_from,scene[get(xml.scene)].index,1);set(scene_match_found,false);
+			for(set(scene_match,get(start_search_from)), scene_match GE	0, dec(scene_match),			
+				ifnot(scene_match_found,if(scene[get(scene_match)].category == scene[get(xml.scene)].category,set(scene_match_found,true);set(newsceneindex,get(scene[get(scene_match)].index));););																		
+			);
+		);		
+	</action>
+
+
+
+</krpano>

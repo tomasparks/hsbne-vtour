@@ -1,0 +1,43 @@
+{include file="./header.tpl" title=foo}
+
+
+{foreach from=$nodelist key=k item=v}
+	<scene name="{$v["id"]}" title="{$v["title"]}" onstart="" thumburl="{$dataurl}/panos/{$v["url"]}/{$v["thumb"]}" lat="{$v["lat"]}" lng="{$v["lng"]}" heading="{$v["heading"]}" >
+
+		<view hlookat="" vlookat="" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="{$dataurl}/panos/{$v["url"]}/preview.jpg" />
+
+		<image type="CUBE" multires="true" tilesize="512">
+			<level tiledimagewidth="2048" tiledimageheight="2048">
+				<cube url="{$dataurl}/panos/{$v["url"]}/%s/l3/%v/l3_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="1024" tiledimageheight="1024">
+				<cube url="{$dataurl}/panos/{$v["url"]}/%s/l2/%v/l2_%s_%v_%h.jpg" />
+			</level>
+			<level tiledimagewidth="512" tiledimageheight="512">
+				<cube url="{$dataurl}/panos/{$v["url"]}/%s/l1/%v/l1_%s_%v_%h.jpg" />
+			</level>
+			<mobile>
+				<cube url="{$dataurl}/panos/{$v["url"]}/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<!-- place your scene hotspots here -->
+{foreach from=$v["hotspots"] item=vv}
+	<hotspot name="{$vv["name"]}" style="{$vv["style"]}" ath="{$vv["ath"]}" atv="{$vv["atv"]}" linkedscene="{$vv["linkedscene"]}" 
+
+onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); if(hlookat !== null, lookat(get(hlookat),get(vlookat)); ); skin_updatescroll();"  /> 
+
+<!-- onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); if(hlookat !== null, lookat(get(hlookat),get(vlookat)); ); skin_updatescroll();"  /> -->
+
+<!-- onclick="if(linkedscene, tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,MERGE,BLEND(1)); if(hlookat !== null, lookat(get(hlookat),get(vlookat)); ); skin_updatescroll(); );" -->
+{/foreach}
+
+	</scene>
+
+
+{/foreach}
+
+
+{include file="./footer.tpl"}

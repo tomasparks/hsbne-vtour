@@ -1,5 +1,5 @@
 {
-  "title": "building 1",
+  "title": "Building 1",
   "nodes": [
     {
       "id": "entry",
@@ -9,11 +9,15 @@
       "lat": "",
       "lng": "",
       "heading": "",
-      "hlookat": "0",
-      "vlookat": "0",
+      "hlookat":"100",
+      "vlookat":"0",
       "hotspots": [
         {
-          "url": "http://"
+          "name":"to_gr_kitchen",
+          "style":"skin_hotspotstyle",
+          "ath":"180",
+          "atv":"0",
+          "linkedscene":"gr_kitchen"
         }
       ]
     },
@@ -29,7 +33,18 @@
       "vlookat": "0",
       "hotspots": [
         {
-          "url": "http://"
+        "name":"to_gr_top",
+        "style":"skin_hotspotstyle",
+        "ath":"0",
+        "atv":"0",
+       "linkedscene":"gr_top"
+        },
+        {
+        "name":"to_entry",
+        "style":"skin_hotspotstyle",
+        "ath":"180",
+        "atv":"0",
+        "linkedscene":"entry"
         }
       ]
     },
@@ -41,11 +56,17 @@
       "lat": "",
       "lng": "",
       "heading": "",
-      "hlookat": "0",
+      "hlookat": "135",
       "vlookat": "0",
       "hotspots": [
         {
-          "url": "http://"
+		"name":"to_gr_electronics", "style":"skin_hotspotstyle", "ath":"-145.0", "atv":"0", "linkedscene":"gr_electronics"
+},
+{
+		 "name":"to_gr_center", "style":"skin_hotspotstyle", "ath":"135", "atv":"0", "linkedscene":"gr_center"
+},
+{
+		"name":"to_gr_kitchen", "style":"skin_hotspotstyle", "ath":"-55", "atv":"0", "linkedscene":"gr_kitchen"
         }
       ]
     },
@@ -61,7 +82,7 @@
       "vlookat": "0",
       "hotspots": [
         {
-          "url": "http://"
+          "name":"to_gr_top", "style":"skin_hotspotstyle", "ath":"0.000", "atv":"0.000", "linkedscene":"gr_top"
         }
       ]
     },
@@ -73,11 +94,14 @@
       "lat": "",
       "lng": "",
       "heading": "",
-      "hlookat": "0",
+      "hlookat": "-55",
       "vlookat": "0",
       "hotspots": [
         {
-          "url": "http://"
+"name":"to_gr_top", "style":"skin_hotspotstyle", "ath":"55.737", "atv":"0", "linkedscene":"gr_top"
+},
+{
+"name":"to_gr_bottom", "style":"skin_hotspotstyle", "ath":"-125", "atv":"0", "linkedscene":"gr_bottom"
         }
       ]
     },
@@ -93,7 +117,10 @@
       "vlookat": "0",
       "hotspots": [
         {
-          "url": "http://"
+			"name":"to_gr_center", "style":"skin_hotspotstyle", "ath":"-75.737", "atv":"0", "linkedscene":"gr_center"
+ },
+{
+		"name":"to_gr_ham", "style":"skin_hotspotstyle", "ath":"11.810", "atv":"0", "linkedscene":"gr_ham"
         }
       ]
     },
@@ -109,7 +136,7 @@
       "vlookat": "0",
       "hotspots": [
         {
-          "url": "http://"
+		"name":"to_gr_bottom", "style":"skin_hotspotstyle", "ath":"206.600", "atv":"0", "linkedscene":"gr_bottom"
         }
       ]
     }

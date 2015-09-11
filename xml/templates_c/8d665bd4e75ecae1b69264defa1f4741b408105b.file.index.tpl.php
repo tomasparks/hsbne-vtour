@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-05-08 09:05:07
+<?php /* Smarty version Smarty-3.1.21-dev, created on 2015-05-08 16:21:51
          compiled from "./templates/index.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:978394555554c5a0bb7a2b7-16881539%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '8d665bd4e75ecae1b69264defa1f4741b408105b' => 
     array (
       0 => './templates/index.tpl',
-      1 => 1431068361,
+      1 => 1431094885,
       2 => 'file',
     ),
   ),
@@ -22,6 +22,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'nodelist' => 0,
     'v' => 0,
     'dataurl' => 0,
+    'vv' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -46,7 +47,7 @@ $_smarty_tpl->tpl_vars['v']->_loop = true;
 " heading="<?php echo $_smarty_tpl->tpl_vars['v']->value["heading"];?>
 " >
 
-		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="" vlookat="" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="<?php echo $_smarty_tpl->tpl_vars['dataurl']->value;?>
 /panos/<?php echo $_smarty_tpl->tpl_vars['v']->value["url"];?>
@@ -69,35 +70,20 @@ $_smarty_tpl->tpl_vars['v']->_loop = true;
 foreach ($_from as $_smarty_tpl->tpl_vars['vv']->key => $_smarty_tpl->tpl_vars['vv']->value) {
 $_smarty_tpl->tpl_vars['vv']->_loop = true;
 ?>
-<hotspot name="..."
-         type="image"
-         url="..."
-         alturl="..."
-         keep="false"
-         devices="all"
-         visible="true"
-         enabled="true"
-         handcursor="true"
-         maskchildren="false"
-         zorder=""
-         style=""
-         ath="0.0" atv="0.0"
-         edge="center"
-         zoom="false"
-         distorted="false" rx="0.0" ry="0.0" rz="0.0"
-         width="" height=""
-         scale="1.0"
-         rotate="0.0"
-         alpha="1.0"
-         onover=""
-         onhover=""
-         onout=""
-         ondown=""
-         onup=""
-         onclick=""
-         onloaded=""
-         />
+	<hotspot name="<?php echo $_smarty_tpl->tpl_vars['vv']->value["name"];?>
+" style="<?php echo $_smarty_tpl->tpl_vars['vv']->value["style"];?>
+" ath="<?php echo $_smarty_tpl->tpl_vars['vv']->value["ath"];?>
+" atv="<?php echo $_smarty_tpl->tpl_vars['vv']->value["atv"];?>
+" linkedscene="<?php echo $_smarty_tpl->tpl_vars['vv']->value["linkedscene"];?>
+" 
+
+onclick="loadscene(<?php echo $_smarty_tpl->tpl_vars['vv']->value["linkedscene"];?>
+, null, MERGE, BLEND(1));"  /> 
+
+<!-- onclick="if(linkedscene, skin_hidetooltips(); tween(scale,0.25,0.5); tween(oy,-20,0.5); tween(alpha,0,0.5); looktohotspot(); loadscene(get(linkedscene),null,get(skin_settings.loadscene_flags),get(skin_settings.loadscene_blend)); skin_updatescroll();set(view.hlookat,<?php echo $_smarty_tpl->tpl_vars['vv']->value["ath"];?>
+);"  /> -->
 <?php } ?>
+
 	</scene>
 
 
